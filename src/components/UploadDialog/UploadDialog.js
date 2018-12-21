@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './UploadDialog.css';
 import { withStyles } from '@material-ui/core/styles';
 import hash from 'string-hash';
+import * as tiff from 'tiff';
 import {
   Button,
   Dialog,
@@ -15,11 +16,36 @@ import { addImagesAction } from '../../actions/images';
 import UploadSnackbar from '../UploadSnackbar/UploadSnackbar';
 
 // Add valid file formats here
-const validFileExtensions = ['png'];
+const validFileExtensions = ['png', 'tiff', 'tif'];
 
-function createImage(bytes, pathname, checksum, currentFile) {
+function createImage(bytes, pathname, checksum, fileExtension) {
   let image = {};
   let img = new Image();
+  img.onload = function() {
+    image['filetype'] = fileExtension;
+    image['id'] = checksum;
+    image['src'] = bytes;
+    image['width'] = img.width;
+    image['height'] = img.height;
+    image['channels'] = 4; // This is true for PNG images
+    image['category'] = null;
+    image['probability'] = null;
+    image['visible'] = true;
+    image['pathname'] = pathname;
+    image['object_bounding_box_minimum_r'] = 0;
+    image['object_bounding_box_minimum_c'] = 0;
+    image['brightness'] = 100;
+    image['contrast'] = 100;
+    image['unselectedChannels'] = [];
+  };
+  img.src = bytes;
+  return image;
+}
+
+function createImageFromTiff(decodedTiff, bytes, pathname, checksum) {
+  let image = {};
+  let img = new Image();
+
   img.onload = function() {
     image['id'] = checksum;
     image['src'] = bytes;
@@ -42,17 +68,23 @@ function createImage(bytes, pathname, checksum, currentFile) {
 
 const readFile = (currentFile, that, noImageFiles) => {
   const pathname = currentFile.webkitRelativePath;
+  const fileExtension = pathname.split('.').pop();
+
   return e => {
     const bytes = e.target.result;
     const checksum = String(hash(bytes));
-    const image = createImage(bytes, pathname, checksum, currentFile);
-    that.imageData[checksum] = image;
-    that.counter = that.counter + 1;
-    if (that.counter === noImageFiles) {
-      store.dispatch(addImagesAction(that.imageData));
-      that.imageData = {};
-      that.counter = 0;
-    }
+    // Check file extension
+    if (fileExtension === 'tiff' || fileExtension === 'tif')
+      tiff.decode(new Uint8Array(bytes));
+
+    // const image = createImage(bytes, pathname, checksum, fileExtension);
+    // that.imageData[checksum] = image;
+    // that.counter = that.counter + 1;
+    // if (that.counter === noImageFiles) {
+    //   store.dispatch(addImagesAction(that.imageData));
+    //   that.imageData = {};
+    //   that.counter = 0;
+    // }
   };
 };
 
@@ -93,7 +125,7 @@ export class UploadDialog extends Component {
     for (let imageFile of imageFiles) {
       const reader = new FileReader();
       reader.onload = readFile(imageFile, that, noImageFiles);
-      reader.readAsDataURL(imageFile, that);
+      reader.readAsArrayBuffer(imageFile, that);
     }
   };
 
