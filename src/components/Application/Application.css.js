@@ -11,17 +11,7 @@ const styles = theme => ({
     width: '100%'
   },
   appBar: {
-    position: 'absolute',
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
-    })
-  },
-  appBarShift: {
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen
-    })
+    position: 'absolute'
   },
   appBarShiftLeft: {
     marginLeft: drawerWidth
@@ -40,47 +30,30 @@ const styles = theme => ({
   drawerHeader: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'flex-end',
-    ...theme.mixins.toolbar
+    justifyContent: 'flex-end'
   },
   content: {
-    flexGrow: 1,
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
-    })
+    flexGrow: 1
   },
   contentLeft: {
     marginLeft: 0
-  },
-  contentShift: {
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen
-    })
   },
   contentShiftLeft: {
     marginLeft: drawerWidth
   },
   fab: {
-    position: 'absolute',
-    bottom: theme.spacing.unit * 2,
-    right: theme.spacing.unit * 2
+    position: 'absolute'
   },
   unlabeledToggled: {
     '&:hover': {
       background: 'rgba(150,150,150,1)'
     },
     background: 'rgba(200,200,200,1)',
-    position: 'absolute',
-    bottom: theme.spacing.unit * 2,
-    right: theme.spacing.unit * 2
+    position: 'absolute'
   },
   unlabeledUntoggled: {
     background: 'rgba(200,50,50,1)',
-    position: 'absolute',
-    bottom: theme.spacing.unit * 2,
-    right: theme.spacing.unit * 2
+    position: 'absolute'
   },
   tagStyle: {
     display: 'inline',

@@ -3,9 +3,7 @@ const styles = theme => ({
     width: '100%'
   },
   input: {
-    backgroundColor: '#f1f3f4',
-    borderRadius: theme.spacing.unit,
-    padding: theme.spacing.unit
+    backgroundColor: '#f1f3f4'
   }
 });
 

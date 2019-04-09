@@ -1,23 +1,16 @@
 const styles = theme => ({
   closeButton: {
-    color: theme.palette.grey[500],
-    position: 'absolute',
-    right: theme.spacing.unit,
-    top: theme.spacing.unit
+    position: 'absolute'
   },
   dialogActions: {
-    borderTop: `1px solid ${theme.palette.divider}`,
-    margin: 0,
-    padding: theme.spacing.unit
+    margin: 0
   },
   dialogContent: {
     margin: 0,
     padding: 0
   },
   dialogTitle: {
-    borderBottom: `1px solid ${theme.palette.divider}`,
-    margin: 0,
-    padding: theme.spacing.unit * 2
+    margin: 0
   }
 });
 

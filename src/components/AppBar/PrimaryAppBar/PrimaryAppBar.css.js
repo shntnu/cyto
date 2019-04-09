@@ -4,17 +4,7 @@ const styles = theme => ({
   appBar: {
     backgroundColor: 'rgba(0, 0, 0, 0)',
     borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
-    boxShadow: 'none',
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
-    })
-  },
-  appBarShift: {
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen
-    })
+    boxShadow: 'none'
   },
   appBarShiftLeft: {
     marginLeft: drawerWidth
@@ -28,10 +18,6 @@ const styles = theme => ({
   },
   hide: {
     display: 'none'
-  },
-  search: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit
   },
   slider: {
     root: {
