@@ -1,4 +1,4 @@
-const styles = theme => ({
+const styles = (theme: any) => ({
   button: {
     padding: '8px'
   },

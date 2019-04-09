@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import './Gallery.css';
-import Items from '../Items/Items.js';
-import SelectionBox from '../SelectionBox/SelectionBox.js';
+import Items from '../Items/Items';
+import SelectionBox from '../SelectionBox/SelectionBox';
 import CustomDragLayer from '../CustomDragLayer/CustomDragLayer';
-import { collisionDetection } from '../helper.js';
+import { collisionDetection } from '../helper';
 
 class Gallery extends PureComponent {
   constructor() {

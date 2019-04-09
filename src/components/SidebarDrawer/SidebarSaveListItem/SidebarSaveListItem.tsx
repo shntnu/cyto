@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import styles from './SidebarSaveListItem.css';
 import { ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 import SaveIcon from '@material-ui/icons/Save';
 import json2csv from 'json2csv';
@@ -10,13 +9,8 @@ import Paper from '@material-ui/core/Paper';
 import Popover from '@material-ui/core/Popover';
 import { fields } from '../../../constants';
 import SaveDialog from '../../Dialog/SaveDialog/SaveDialog';
-import { makeStyles } from '@material-ui/styles';
-
-const useStyles = makeStyles(styles);
 
 export default function SidebarSaveListItem(props) {
-  const classes = useStyles();
-
   const [anchorEl, setAnchorEl] = useState(0);
   const [saveDialogOpen, setSaveDialogOpen] = useState(false);
   const [defaultDialogText, setDefaultDialogText] = useState('');
