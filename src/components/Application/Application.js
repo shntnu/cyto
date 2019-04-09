@@ -12,24 +12,24 @@ import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles(styles);
 
-function createImageCollection(images, categories) {
-  const IMAGES = Object.values(images).map(image => {
-    let category = findCategory(image.category, categories);
-    let categoryColor = 'white';
-    if (category !== undefined) {
-      categoryColor = category.color;
-      category = category.identifier;
-    }
-    return { ...image, category: category, color: categoryColor };
-  });
-  return IMAGES;
-}
-
-function findCategory(identifier, categories) {
-  return categories.find(function(category) {
-    return category.identifier === identifier;
-  });
-}
+// function createImageCollection(images, categories) {
+//   const IMAGES = Object.values(images).map(image => {
+//     let category = findCategory(image.category, categories);
+//     let categoryColor = 'white';
+//     if (category !== undefined) {
+//       categoryColor = category.color;
+//       category = category.identifier;
+//     }
+//     return { ...image, category: category, color: categoryColor };
+//   });
+//   return IMAGES;
+// }
+//
+// function findCategory(identifier, categories) {
+//   return categories.find(function(category) {
+//     return category.identifier === identifier;
+//   });
+// }
 
 function Application(props) {
   const classes = useStyles();
@@ -40,7 +40,8 @@ function Application(props) {
   const [unlabelledVisibility, setUnlabelledVisibility] = useState(0);
 
   useEffect(() => {
-    setImages(createImageCollection(props.images, props.categories));
+    setImages([]);
+    // setImages(createImageCollection(props.images, props.categories));
   }, []);
 
   const { updateImageCategory, spinnerActive } = props;

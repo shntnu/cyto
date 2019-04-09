@@ -4,12 +4,6 @@ import {
   updateCategoryDescriptionAction,
   updateCategoryVisibilityAction
 } from './categories';
-import {
-  CREATE_CATEGORY,
-  DELETE_CATEGORY,
-  UPDATE_CATEGORY_DESCRIPTION,
-  UPDATE_CATEGORY_VISIBILITY
-} from '../constants';
 
 describe('category actions', () => {
   it('should create an action to create a new category', () => {
@@ -18,7 +12,7 @@ describe('category actions', () => {
     };
 
     const expectedAction = {
-      type: CREATE_CATEGORY,
+      type: 'CREATE_CATEGORY',
       category
     };
 
@@ -29,7 +23,7 @@ describe('category actions', () => {
     const identifier = '16e0e1b8-ae79-46f5-80cf-58e7f8dda344';
 
     const expectedAction = {
-      type: DELETE_CATEGORY,
+      type: 'DELETE_CATEGORY',
       identifier
     };
 
@@ -40,7 +34,7 @@ describe('category actions', () => {
     const identifier = '16e0e1b8-ae79-46f5-80cf-58e7f8dda344';
 
     const expectedAction = {
-      type: UPDATE_CATEGORY_DESCRIPTION,
+      type: 'UPDATE_CATEGORY_DESCRIPTION',
       identifier: identifier,
       description: 'foo'
     };
@@ -54,7 +48,7 @@ describe('category actions', () => {
     const identifier = '16e0e1b8-ae79-46f5-80cf-58e7f8dda344';
 
     const expectedAction = {
-      type: UPDATE_CATEGORY_VISIBILITY,
+      type: 'UPDATE_CATEGORY_VISIBILITY',
       identifier
     };
 

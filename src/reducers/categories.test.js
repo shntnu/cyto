@@ -1,10 +1,4 @@
 import categories from './categories';
-import {
-  CREATE_CATEGORY,
-  DELETE_CATEGORY,
-  UPDATE_CATEGORY_DESCRIPTION,
-  UPDATE_CATEGORY_VISIBILITY
-} from '../constants';
 
 describe('categories', () => {
   it('should return the initial state', () => {
@@ -18,7 +12,7 @@ describe('categories', () => {
 
     expect(
       categories([], {
-        type: CREATE_CATEGORY,
+        type: 'CREATE_CATEGORY',
         category
       })
     ).toEqual([
@@ -39,7 +33,7 @@ describe('categories', () => {
           }
         ],
         {
-          type: DELETE_CATEGORY,
+          type: 'DELETE_CATEGORY',
           identifier
         }
       )
@@ -58,7 +52,7 @@ describe('categories', () => {
           }
         ],
         {
-          type: UPDATE_CATEGORY_DESCRIPTION,
+          type: 'UPDATE_CATEGORY_DESCRIPTION',
           identifier: identifier,
           description: 'bar'
         }
@@ -83,7 +77,7 @@ describe('categories', () => {
           }
         ],
         {
-          type: UPDATE_CATEGORY_VISIBILITY,
+          type: 'UPDATE_CATEGORY_VISIBILITY',
           identifier
         }
       )
