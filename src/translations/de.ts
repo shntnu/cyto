@@ -15,6 +15,7 @@ const de = {
     'Import images': 'Import images',
     'Logo': 'Logo',
     'Model': 'Model',
+    'New classifier': 'New classifier',
     'Open classifier': 'Open classifier',
     'Open example classifier': 'Open example classifier',
     'Open weights': 'Open weights',

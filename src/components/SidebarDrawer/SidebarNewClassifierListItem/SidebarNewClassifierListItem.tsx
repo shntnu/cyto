@@ -17,7 +17,7 @@ const SidebarNewClassifierListItem = () => {
           <AddIcon />
         </ListItemIcon>
 
-        <ListItemText primary={t('New classifier…')} />
+        <ListItemText primary={t('New classifier') + '…'} />
       </ListItem>
 
       <ConnectedNewClassifierDialog
