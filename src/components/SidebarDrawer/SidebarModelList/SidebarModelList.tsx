@@ -13,11 +13,14 @@ import * as API from '../../../classifier';
 import useSnackbar from '../../../hooks/Snackbar';
 import TrainingSnackbar from '../../Snackbar/TrainingSnackbar/TrainingSnackbar';
 import useCollapseList from '../../../hooks/CollapseList';
+import { useTranslation } from 'react-i18next';
 
-const SidebarModelList = (props: { categories: any; images: any; }) => {
+const SidebarModelList = (props: { categories: any; images: any }) => {
   const { collapsedList, collapseList } = useCollapseList();
 
   const { openedSnackbar, openSnackbar, closeSnackbar } = useSnackbar();
+
+  const { t } = useTranslation();
 
   const run = () => {
     openSnackbar();
@@ -34,7 +37,7 @@ const SidebarModelList = (props: { categories: any; images: any; }) => {
           {!collapsedList ? <ExpandLessIcon /> : <ExpandMoreIcon />}
         </ListItemIcon>
 
-        <ListItemText inset primary="Model" />
+        <ListItemText inset primary={t('Model')} />
       </ListItem>
 
       <Collapse in={!collapsedList} timeout="auto" unmountOnExit>
@@ -43,7 +46,7 @@ const SidebarModelList = (props: { categories: any; images: any; }) => {
             <PlayCircleOutlineIcon />
           </ListItemIcon>
 
-          <ListItemText primary="Run Classifier" />
+          <ListItemText primary={t('Run classifier')} />
 
           <TrainingSnackbar onClose={closeSnackbar} open={openedSnackbar} />
         </ListItem>

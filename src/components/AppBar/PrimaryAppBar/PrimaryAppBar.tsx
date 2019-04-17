@@ -8,11 +8,14 @@ import ConnectedImportImagesButton from '../../../containers/ConnectedImportImag
 import Logo from '../Logo/Logo';
 import DeleteButton from '../DeleteButton/DeleteButton';
 import { makeStyles } from '@material-ui/styles';
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles(styles);
 
 const PrimaryAppBar = (props: any) => {
   const classes = useStyles();
+
+  const { t } = useTranslation();
 
   const { toggle, toggled, selectedImages, setSelectedImages } = props;
 
@@ -26,7 +29,7 @@ const PrimaryAppBar = (props: any) => {
     >
       <Toolbar>
         <IconButton
-          aria-label="open sidebar"
+          aria-label={t('Open sidebar')}
           className={classNames(classes.menuButton, toggled && classes.hide)}
           color="inherit"
           onClick={toggle}

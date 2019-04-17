@@ -10,6 +10,7 @@ import {
 import classNames from 'classnames';
 import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/styles';
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles(styles);
 
@@ -18,12 +19,14 @@ const SidebarAppBar = (props: any) => {
 
   const classes = useStyles();
 
+  const { t } = useTranslation();
+
   return (
     <AppBar className={classNames(classes.appBar)} color="default">
       <Toolbar disableGutters={true}>
-        <Tooltip title={(toggled ? 'Hide ' : 'Show ') + 'sidebar'}>
+        <Tooltip title={toggled ? t('Hide sidebar') : t('Show sidebar')}>
           <IconButton
-            aria-label="open sidebar"
+            aria-label={t('Open sidebar')}
             className={classNames(classes.menuButton)}
             color="inherit"
             onClick={toggle}
@@ -33,7 +36,7 @@ const SidebarAppBar = (props: any) => {
         </Tooltip>
 
         <Typography variant="h6" color="inherit">
-          Logo
+          {t('Logo')}
         </Typography>
       </Toolbar>
     </AppBar>

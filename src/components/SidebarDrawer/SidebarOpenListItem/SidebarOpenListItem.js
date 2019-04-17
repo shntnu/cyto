@@ -14,6 +14,7 @@ import useDialog from '../../../hooks/Dialog';
 import OpenDialog from '../../Dialog/OpenExampleClassifierDialog/OpenExampleClassifierDialog';
 import useMenu from '../../../hooks/Menu';
 import * as API from '../../../classifier';
+import { useTranslation } from 'react-i18next';
 
 function openProject(e, props) {
   const reader = new FileReader();
@@ -57,6 +58,8 @@ const SidebarOpenListItem = props => {
     left: openedMenu ? anchorEl.getBoundingClientRect().left + 14 : 0
   };
 
+  const { t } = useTranslation();
+
   return (
     <React.Fragment>
       <ListItem button onClick={openMenu}>
@@ -64,7 +67,7 @@ const SidebarOpenListItem = props => {
           <FolderOpenIcon />
         </ListItemIcon>
 
-        <ListItemText primary="Open" />
+        <ListItemText primary={t('Open')} />
       </ListItem>
 
       <Popover
@@ -85,14 +88,14 @@ const SidebarOpenListItem = props => {
             />
             <label htmlFor="open-project">
               <MenuItem>
-                <ListItemText primary="Open classifier" />
+                <ListItemText primary={t('Open classifier')} />
               </MenuItem>
             </label>
 
             <Divider />
 
             <MenuItem onClick={openExampleClassifier}>
-              <ListItemText primary="Open example classifier" />
+              <ListItemText primary={t('Open example classifier')} />
             </MenuItem>
 
             <input
@@ -105,7 +108,7 @@ const SidebarOpenListItem = props => {
             />
             <label htmlFor="open-weights">
               <MenuItem>
-                <ListItemText primary="Open weights" />
+                <ListItemText primary={t('Open weights')} />
               </MenuItem>
             </label>
           </MenuList>

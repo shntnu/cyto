@@ -17,6 +17,7 @@ import SaveDialog from '../../Dialog/SaveDialog/SaveDialog';
 import useMenu from '../../../hooks/Menu';
 import useDialog from '../../../hooks/Dialog';
 import * as API from '../../../classifier';
+import { useTranslation } from 'react-i18next';
 
 const SidebarSaveListItem = props => {
   const { anchorEl, openedMenu, openMenu, closeMenu } = useMenu();
@@ -85,6 +86,8 @@ const SidebarSaveListItem = props => {
     left: openedMenu ? anchorEl.getBoundingClientRect().left + 14 : 0
   };
 
+  const { t } = useTranslation();
+
   return (
     <React.Fragment>
       <ListItem button onClick={openMenu}>
@@ -92,7 +95,7 @@ const SidebarSaveListItem = props => {
           <SaveIcon />
         </ListItemIcon>
 
-        <ListItemText inset primary="Save" />
+        <ListItemText inset primary={t('Save')} />
       </ListItem>
 
       <Popover
@@ -104,17 +107,17 @@ const SidebarSaveListItem = props => {
         <Paper>
           <MenuList dense>
             <MenuItem onClick={saveClassifier}>
-              <ListItemText primary="Save classifier" />
+              <ListItemText primary={t('Save classifier')} />
             </MenuItem>
 
             <Divider />
 
             <MenuItem onClick={saveAnnotationsAndPredictions}>
-              <ListItemText primary="Save annotations and predictions" />
+              <ListItemText primary={t('Save annotations and predictions')} />
             </MenuItem>
 
             <MenuItem onClick={saveWeights}>
-              <ListItemText primary="Save weights" />
+              <ListItemText primary={t('Save weights')} />
             </MenuItem>
           </MenuList>
         </Paper>

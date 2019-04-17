@@ -9,6 +9,7 @@ import {
 import ConnectedEditCategoryDialog from '../../../containers/ConnectedEditCategoryDialog';
 import ConnectedDeleteCategoryDialog from '../../../containers/ConnectedDeleteCategoryDialog';
 import useDialog from '../../../hooks/Dialog';
+import { useTranslation } from 'react-i18next';
 
 const SidebarCategoryListItemMenuList = props => {
   const { anchorEl, category, closeMenu, openedMenu } = props;
@@ -46,6 +47,8 @@ const SidebarCategoryListItemMenuList = props => {
     closeMenu();
   };
 
+  const { t } = useTranslation();
+
   return (
     <React.Fragment>
       <Popover
@@ -58,15 +61,15 @@ const SidebarCategoryListItemMenuList = props => {
         <Paper>
           <MenuList dense>
             <MenuItem onClick={onHideOtherCategoriesClick}>
-              <ListItemText primary="Hide other categories" />
+              <ListItemText primary={t('Hide other categories')} />
             </MenuItem>
 
             <MenuItem onClick={onEditCategoryClick}>
-              <ListItemText primary="Edit category" />
+              <ListItemText primary={t('Edit category')} />
             </MenuItem>
 
             <MenuItem onClick={onDeleteCategoryClick}>
-              <ListItemText primary="Delete category" />
+              <ListItemText primary={t('Delete category')} />
             </MenuItem>
           </MenuList>
         </Paper>
