@@ -24,7 +24,7 @@ const en = {
     'Save classifier': 'Classifier सहेजें',
     'Save weights': 'Weights सहेजें',
     'Save': 'सहेजें',
-    'Search images': 'Search images',
+    'Search images': 'Images खोजें',
     'Send feedback': 'Send feedback',
     'Settings': 'सेटिंग्स',
     'Show sidebar': 'Show sidebar',
