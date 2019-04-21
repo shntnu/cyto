@@ -7,7 +7,7 @@ const en = {
     'Create new classifier': 'Create new classifier',
     'Delete category': 'वर्ग हटाएँ',
     'Delete images': 'Images हटाएँ',
-    'Description': 'Description',
+    'Description': 'विवरण',
     'Edit category': 'वर्ग Edit',
     'Help': 'सहायता',
     'Hide other categories': 'Hide other categories',
