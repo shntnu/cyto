@@ -1,7 +1,7 @@
 // prettier-ignore
 const en = {
   translation: {
-    'Cancel': 'Cancel',
+    'Cancel': 'रद्द करें',
     'Categories': 'Categories',
     'Create category': 'वर्ग बनाएँ',
     'Create new classifier': 'Create new classifier',
