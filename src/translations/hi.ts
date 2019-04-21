@@ -4,7 +4,7 @@ const en = {
     'Cancel': 'रद्द करें',
     'Categories': 'सारे वर्ग',
     'Create category': 'वर्ग बनाएँ',
-    'Create new classifier': 'नया वर्गीकर्त्ता बनाएं', // वर्गीकर्त्ता is the technical translation of classifier if you needed it, but is almost never used
+    'Create new classifier': 'नया वर्गीकर्त्ता बनाएं', // वर्गीकर्त्ता = classifier but is rarely used; consider transliterating instead
     'Delete category': 'वर्ग हटाएँ',
     'Delete images': 'चित्रों को हटाएँ',
     'Description': 'विवरण',
@@ -28,7 +28,7 @@ const en = {
     'Send feedback': 'Feedback भेजें',
     'Settings': 'सेटिंग्स',
     'Show sidebar': 'साइडबार दिखाएं',
-    'Unknown': 'अनजान' // this is a poor translation
+    'Unknown': 'अनजान' // Not sure about this translation
   }
 };
 
