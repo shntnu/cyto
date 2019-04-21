@@ -12,7 +12,7 @@ const en = {
     'Help': 'सहायता',
     'Hide other categories': 'बाकि वर्गों को छिपाएं',
     'Hide sidebar': 'साइडबार छिपाएं',
-    'Import images': 'चित्रों को import',
+    'Import images': 'चित्रों को आयात करें',
     'Logo': 'Logo',
     'Model': 'Model',
     'Open classifier': 'Classifier खोलें',
