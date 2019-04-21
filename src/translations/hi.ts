@@ -26,7 +26,7 @@ const en = {
     'Save': 'सहेजें',
     'Search images': 'Search images',
     'Send feedback': 'Send feedback',
-    'Settings': 'Settings',
+    'Settings': 'सेटिंग्स',
     'Show sidebar': 'Show sidebar',
     'Unknown': 'Unknown'
   }
