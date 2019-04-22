@@ -13,22 +13,22 @@ const en = {
     'Hide other categories': 'बाकि वर्गों को छिपाएं',
     'Hide sidebar': 'साइडबार छिपाएं',
     'Import images': 'चित्रों को आयात करें',
-    'Logo': 'Logo',
-    'Model': 'Model',
+    'Logo': 'लोगो', // transliterated (Logo) but that's ok because it is a loanword 
+    'Model': 'मॉडल', // transliterated (Model) but should figure out an appropriate abstraction and translate that
     'Open classifier': 'वर्गीकर्त्ता खोलें',
     'Open example classifier': 'उदाहरण का वर्गीकर्त्ता खोलें',
     'Open weights': 'वेइट्स खोलें',
     'Open': 'खोलें',
-    'Run classifier': 'Run वर्गीकर्त्ता',
-    'Save annotations and predictions': 'Annotations तथा predictions सहेजें',
+    'Run classifier': 'वर्गीकर्त्ता को चलाएं',
+    'Save annotations and predictions': 'टिप्पणी तथा अनुमान सहेजें', // व्याख्या is an alternative to टिप्पणी
     'Save classifier': 'वर्गीकर्त्ता सहेजें',
     'Save weights': 'वेइट्स सहेजें',
     'Save': 'सहेजें',
     'Search images': 'चित्र खोजें',
-    'Send feedback': 'Feedback भेजें',
+    'Send feedback': 'प्रतिक्रिया भेजें',
     'Settings': 'सेटिंग्स',
     'Show sidebar': 'साइडबार दिखाएं',
-    'Unknown': 'अनजान' // Not sure about this translation
+    'Unknown': 'अज्ञात' // should be used as an adjective before a noun
   }
 };
 
